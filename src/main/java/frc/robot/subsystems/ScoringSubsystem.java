@@ -7,21 +7,18 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-import frc.robot.Constants.DriveConstants;
+import frc.robot.Constants.ScoringConstants;
+
 
 public class ScoringSubsystem extends SubsystemBase {
     private final SparkFlex m_turningMotor;
-    private final double MotorSpeed = 0.1f;
+    private final boolean isRunning = false;
 
     public ScoringSubsystem() {
-        m_turningMotor = new SparkFlex(DriveConstants.kScoringTurningCanId, MotorType.kBrushless);
+        m_turningMotor = new SparkFlex(ScoringConstants.kScoringTurningCanId, MotorType.kBrushless);
     }
 
-    public void MotorON() {
-        m_turningMotor.set(MotorSpeed);
-    }
-
-    public void MotorOFF() {
-        m_turningMotor.set(0);
+    public void setMotor() {
+        m_turningMotor.set(isRunning ? ScoringConstants.kMotorSpeed : 0);
     }
 }

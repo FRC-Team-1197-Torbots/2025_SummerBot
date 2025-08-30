@@ -56,8 +56,6 @@ public final class Constants {
     public static final int kFrontRightTurningCanId = 2;
     public static final int kRearRightTurningCanId = 8;
 
-    public static final int kScoringTurningCanId = 10;
-
     public static final boolean kGyroReversed = false;
   }
 
@@ -100,5 +98,10 @@ public final class Constants {
 
   public static final class NeoMotorConstants {
     public static final double kFreeSpeedRpm = 5676;
+  }
+
+  public static final class ScoringConstants {   
+    public static final int kScoringTurningCanId = 10;
+    public static final double kMotorSpeed = 0.1f;
   }
 }

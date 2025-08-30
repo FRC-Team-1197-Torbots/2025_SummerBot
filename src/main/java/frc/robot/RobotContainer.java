@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.PS4Controller.Button;
 import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
+import frc.robot.Constants.ScoringConstants;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ScoringSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -76,8 +77,7 @@ public class RobotContainer {
         .whileTrue(new RunCommand(
             () -> m_robotDrive.setX(),
             m_robotDrive));*/
-    m_driverController.a().onTrue(Commands.runOnce(() -> m_robotScore.MotorON()));
-    m_driverController.y().onTrue(Commands.runOnce(() -> m_robotScore.MotorOFF()));
+    m_driverController.a().onTrue(Commands.runOnce(() -> m_robotScore.setMotor()));
   }
 
   /**
